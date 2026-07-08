@@ -1,0 +1,47 @@
+<div class="board-columns">
+  @for (column of columns; track column.status) {
+    <section class="column" [class]="column.colorClass">
+      <header class="column__header">
+        <span class="column__icon">
+          @switch (column.icon) {
+            @case ('todo') {
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="3" />
+              </svg>
+            }
+            @case ('progress') {
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 2h14" />
+                <path d="M5 22h14" />
+                <path d="M7 2v4.2a2 2 0 0 0 .6 1.4l4.4 4.4l4.4 -4.4a2 2 0 0 0 .6 -1.4v-4.2" />
+                <path d="M17 22v-4.2a2 2 0 0 0 -0.6 -1.4l-4.4 -4.4l-4.4 4.4a2 2 0 0 0 -0.6 1.4v4.2" />
+              </svg>
+            }
+            @case ('done') {
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="3" />
+                <path d="M8.5 12.5l2.5 2.5l5 -5.5" />
+              </svg>
+            }
+          }
+        </span>
+        <span class="column__label">{{ column.label }}</span>
+        <span class="column__count">{{ column.tasks.length }}</span>
+      </header>
+
+      <div class="column__body">
+        @if (column.tasks.length === 0) {
+          <p class="column__empty">No tasks here.</p>
+        } @else {
+          @for (task of column.tasks; track trackByTaskId($index, task)) {
+            <app-task-item
+              [task]="task"
+              (edit)="edit.emit($event)"
+              (delete)="delete.emit($event)"
+            />
+          }
+        }
+      </div>
+    </section>
+  }
+</div>

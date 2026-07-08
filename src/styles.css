@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poppins-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/poppins-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/poppins-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/poppins-700.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #555555;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.btn--primary {
+  background-color: #3b6fe0;
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background-color: #2f5bc4;
+}
+
+.btn--secondary {
+  background-color: #e5e7eb;
+  color: #555555;
+}
+
+.btn--secondary:hover {
+  background-color: #d1d5db;
+}
+
+.btn--danger {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn--danger:hover {
+  background-color: #fecaca;
+}
+
+.btn--small {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+.required {
+  color: #dc2626;
+}
+
+.error {
+  display: block;
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  background-color: #ffffff;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+}
+
+.empty-state__message {
+  font-size: 1rem;
+  margin: 0;
+}

@@ -1,0 +1,135 @@
+<div class="shell">
+  <aside class="sidebar">
+    <div class="sidebar__logo">
+      <svg class="sidebar__logo-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <path d="M12 3l9 9-9 9-9-9z" />
+      </svg>
+      <span>TaskMinder.</span>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a class="sidebar__nav-item" href="javascript:void(0)">
+        <svg class="sidebar__nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="8" height="6" rx="1.5" />
+          <rect x="13" y="3" width="8" height="4" rx="1.5" />
+          <rect x="3" y="11" width="8" height="4" rx="1.5" />
+          <rect x="13" y="9" width="8" height="12" rx="1.5" />
+        </svg>
+        Dashboard
+      </a>
+      <a class="sidebar__nav-item" href="javascript:void(0)">
+        <svg class="sidebar__nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 5a1 1 0 0 1 1 -1h3l1.5 1.5h6.5a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-11a1 1 0 0 1 -1 -1z" />
+          <path d="M3 8v9a1 1 0 0 0 1 1h11" />
+        </svg>
+        Projects
+      </a>
+      <a class="sidebar__nav-item sidebar__nav-item--active" href="javascript:void(0)">
+        <svg class="sidebar__nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6l1.5 1.5L8 5" />
+          <path d="M4 12l1.5 1.5L8 11" />
+          <path d="M4 18l1.5 1.5L8 17" />
+          <line x1="11" y1="6" x2="20" y2="6" />
+          <line x1="11" y1="12" x2="20" y2="12" />
+          <line x1="11" y1="18" x2="20" y2="18" />
+        </svg>
+        Tasks
+      </a>
+      <a class="sidebar__nav-item" href="javascript:void(0)">
+        <svg class="sidebar__nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3.5" y="5.5" width="17" height="15" rx="2.5" />
+          <line x1="3.5" y1="10.5" x2="20.5" y2="10.5" />
+          <path d="M8 3.5v4" />
+          <path d="M16 3.5v4" />
+          <path d="M9.5 15.5l1.8 1.8l3.2 -3.6" />
+        </svg>
+        Calendar
+      </a>
+    </nav>
+
+    <button type="button" class="sidebar__logout">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 14l-5 -5l5 -5" />
+        <path d="M20 20v-7a4 4 0 0 0 -4 -4h-12" />
+      </svg>
+      Log out
+    </button>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__search">
+        <input
+          type="text"
+          placeholder="Search"
+          [(ngModel)]="searchTerm"
+          aria-label="Search tasks"
+        />
+        <svg class="topbar__search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      </div>
+      <div class="topbar__actions">
+        <span class="topbar__bell">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0 -12 0c0 7 -3 9 -3 9h18s-3 -2 -3 -9" />
+            <path d="M13.73 21a2 2 0 0 1 -3.46 0" />
+          </svg>
+          <span class="topbar__bell-dot"></span>
+        </span>
+        <span class="topbar__avatar">TM</span>
+      </div>
+    </header>
+
+    <main class="board">
+      <div class="board__header">
+        <h1>Tasks</h1>
+        <div class="board__toolbar">
+          <button type="button" class="icon-btn" title="Undo" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg>
+          </button>
+          <button type="button" class="icon-btn" title="Redo" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l4 -4l-4 -4" /><path d="M19 10h-11a4 4 0 1 0 0 8h1" /></svg>
+          </button>
+          <button type="button" class="icon-btn" title="Members" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3" /><path d="M3 19c0 -3 2.5 -5 6 -5s6 2 6 5" /><circle cx="17" cy="9" r="2.5" /><path d="M15.5 14.2c2.5 .3 4.5 2 4.5 4.8" /></svg>
+          </button>
+          <button type="button" class="icon-btn" title="Filters" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="6" x2="19" y2="6" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <line x1="5" y1="18" x2="19" y2="18" />
+              <circle cx="9" cy="6" r="1.6" fill="currentColor" stroke="none" />
+              <circle cx="15" cy="12" r="1.6" fill="currentColor" stroke="none" />
+              <circle cx="10" cy="18" r="1.6" fill="currentColor" stroke="none" />
+            </svg>
+          </button>
+          <button type="button" class="btn btn--primary" (click)="openAddModal()">
+            New task +
+          </button>
+        </div>
+      </div>
+
+      @if (!hasAnyTasks()) {
+        <div class="empty-state">
+          <p class="empty-state__message">No tasks found. Add your first task.</p>
+        </div>
+      } @else {
+        <app-task-list
+          [tasks]="filteredTasks()"
+          (edit)="openEditModal($event)"
+          (delete)="onDeleteRequested($event)"
+        />
+      }
+    </main>
+  </div>
+</div>
+
+@if (isModalOpen()) {
+  <div class="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <app-task-form [editingTask]="editingTask()" (save)="onSave($event)" (cancelEdit)="closeModal()" />
+    </div>
+  </div>
+}
